@@ -16,8 +16,98 @@
 }
 
 .btn-warning:hover {
-  background-color: #e1e500 !important;
-  border-color: #e1e500 !important;
+  background-color: #F87060 !important;
+  border-color: #F87060 !important;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(251, 255, 0, 0.25);
+}
+
+section {
+  scroll-margin-top: 30px;
+}
+
+#testimonials {
+  background: linear-gradient(180deg, rgba(145,101,63,1) 0%, rgba(184,125,75,1) 50%, rgba(145,101,63,1) 100%);
+  margin: 0;
+  padding: 0;
+}
+
+#home {
+  padding-bottom: 0;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+#testimonials .carousel-item {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#formationCarousel .carousel-controls-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  z-index: 2;
+}
+
+#formationCarousel .carousel-control-prev,
+#formationCarousel .carousel-control-next {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin: 0;
+  inset: auto;
+  transform: none;
+}
+
+#formationCarousel .carousel-indicators {
+  position: relative;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#formationCarousel .carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  border: none;
+}
+
+#formationCarousel .carousel-indicators .active {
+  background-color: #fff;
+}
+
+#testimonials .lead {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  font-weight: 500;
 }
 
 .bg-dark {
@@ -86,4 +176,8 @@ body {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/* Fix Scrolling Issue when clicking navbar items */ 
+section {
+  scroll-margin-top: 30px;
+  scroll-snap-margin-top: 30px; /* For older browsers */
+}

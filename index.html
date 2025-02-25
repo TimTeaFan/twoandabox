@@ -40,12 +40,12 @@
     </header>
 
     <main>
-        <section id="home" class="min-vh-70 bg-gray-800 py-5">
+        <section id="home" class="bg-gray-800 py-5">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6">
                         <div class="ratio ratio-4x3 rounded overflow-hidden">
-                            <img src="/placeholder.svg?height=1080&width=1080" alt="Two And A Box performing live" class="img-fluid object-fit-cover rounded">
+                            <img src="images/Rainer_Gitarre.webp?height=1080&width=1080" alt="Two And A Box performing live" class="img-fluid object-fit-cover rounded">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -54,7 +54,26 @@
                             Experience the unique blend of rhythm and melody as we redefine the boundaries of modern music. Two And
                             A Box brings you an unforgettable journey through sound.
                         </p>
-                        <a href="#kontakt" class="btn btn-warning btn-lg rounded-pill">Jetzt kontaktieren</a>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#kontakt" class="btn btn-warning btn-lg rounded-3">Jetzt kontaktieren</a>
+                            <a href="tel:+491721234567" class="btn btn-warning btn-lg rounded-3 d-lg-none">Jetzt anrufen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><section id="testimonials" class="py-3" >
+            <div class="container px-4">
+                <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active">
+                            <p class="lead mb-0 text-dark">"Two And A Box hat unsere Hochzeit zu etwas ganz Besonderem gemacht. Die Musikauswahl war perfekt und die Stimmung großartig!" - Marie & Thomas K., Wiesbaden</p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="lead mb-0 text-dark">"Professionell, flexibel und mit viel Gefühl für die richtige Musik zum richtigen Zeitpunkt. Absolut empfehlenswert!" - Stefan M., Firmenevent Frankfurt</p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="lead mb-0 text-dark">"Eine Band, die ihr Handwerk versteht. Haben unser Sommerfest perfekt musikalisch begleitet." - Christina R., Mainz</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,7 +84,7 @@
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6 order-lg-2">
                         <div class="ratio ratio-4x3 rounded overflow-hidden">
-                            <img src="/placeholder.svg?height=1080&width=1080&text=Anlässe" alt="Anlässe" class="img-fluid object-fit-cover rounded">
+                            <img src="images/Rainer_Strassenfest.webp?height=1080&width=1080" alt="Anlässe" class="img-fluid object-fit-cover rounded">
                         </div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
@@ -82,8 +101,33 @@
             <div class="container px-4">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6">
-                        <div class="ratio ratio-4x3 rounded overflow-hidden">
-                            <img src="/placeholder.svg?height=1080&width=1080&text=Formation" alt="Formation" class="img-fluid object-fit-cover rounded">
+                        <div id="formationCarousel" class="carousel slide ratio ratio-4x3 rounded overflow-hidden" data-bs-ride="carousel" data-bs-interval="10000">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/Rainer_grosse_Buehne.webp" alt="Rainer auf der großen Bühne" class="img-fluid object-fit-cover rounded">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Sybilla_stage_black_dress.webp" alt="Sybilla auf der Bühne" class="img-fluid object-fit-cover rounded">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/Rainer_Gitarre.webp" alt="Rainer mit Gitarre" class="img-fluid object-fit-cover rounded">
+                                </div>
+                            </div>
+                            <div class="carousel-controls-wrapper">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#formationCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#formationCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -117,15 +161,33 @@
         <section id="kontakt" class="py-5 bg-gray-800">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
-                    <div class="col-lg-6">
-                        <div class="ratio ratio-4x3 rounded overflow-hidden">
-                            <img src="/placeholder.svg?height=1080&width=1080&text=Kontakt" alt="Kontakt" class="img-fluid object-fit-cover rounded">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 order-1 order-lg-1">
                         <h2 class="display-5 fw-bold text-warning mb-4">Kontakt</h2>
                         <p class="lead text-light">
                             Möchten Sie Two And A Box für Ihre Veranstaltung buchen oder haben Sie Fragen? Kontaktieren Sie uns unter info@twoandabox.com oder rufen Sie uns an: +41 123 456 789. Wir freuen uns darauf, Ihr Event musikalisch zu begleiten!
+                        </p>
+                    </div>
+                    <div class="col-lg-6 order-2 order-lg-2">
+                        <form name="contact" method="POST" data-netlify="true" class="bg-gray-800 p-4 rounded">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="vorname" placeholder="Vorname" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="nachname" placeholder="Nachname" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" name="telefon" placeholder="Telefonnummer (im Falle ein Rückruf gewünscht ist)">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" name="nachricht" rows="5" placeholder="Nachricht" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-warning rounded-3">Absenden</button>
+                        </form>
                         </p>
                     </div>
                 </div>
@@ -135,7 +197,7 @@
 
     <footer class="py-4">
         <div class="container px-4 text-center text-secondary">
-            <p class="mb-0">© <span id="year"></span> <span class="font-renfrew"><small>Two And A Box</small></span>. All rights reserved.</p>
+            <p class="mb-0">© <span id="year"></span> <span class="font-renfrew"><small>Two And A Box</small></span>. All rights reserved. <a href="/impressum.html" class="text-secondary">Impressum</a></p>
         </div>
     </footer>
 
