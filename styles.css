@@ -1,10 +1,27 @@
 @font-face {
   font-family: "Renfrew";
-  src: url("./Renfrew.ttf") format("truetype");
+  src: url("fonts/Renfrew.ttf") format("truetype");
 }
 :root {
-  --bs-primary: #ffc107;
-  --bs-dark: #010101;
+  --bs-warning: #fbff00;
+  --bs-warning-rgb: 251, 255, 0;
+  --bs-primary: #fbff00;
+  --bs-primary-rgb: 251, 255, 0;
+  --bs-dark: #000000;
+}
+
+.btn-warning {
+  background-color: #fbff00 !important;
+  border-color: #fbff00 !important;
+}
+
+.btn-warning:hover {
+  background-color: #e1e500 !important;
+  border-color: #e1e500 !important;
+}
+
+.bg-dark {
+  background-color: #181700 !important
 }
 
 .font-renfrew {
@@ -20,18 +37,28 @@ body {
 }
 
 .bg-gray-800 {
-  background-color: #1b1b0d;
+  background-color: #1d1c0f;
 }
 
 .hover-warning {
   transition: color 0.3s;
 }
 .hover-warning:hover {
-  color: var(--bs-primary) !important;
+  color: var(--bs-warning) !important;
+}
+
+.responsive-logo {
+  font-size: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .responsive-logo {
+    font-size: calc(1rem + 0.9vw);
+  }
 }
 
 .nav-link {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .ratio-4x3 {
@@ -47,7 +74,7 @@ body {
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .display-4 {
     font-size: 2.5rem;
   }
