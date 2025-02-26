@@ -6,11 +6,11 @@
     <title>Two And A Box</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
     <header class="bg-dark shadow-sm sticky-top">
-        <nav class="container px-4 py-2">
+        <nav class="container px-4 py-3">
             <div class="navbar navbar-dark navbar-expand-lg p-0">
                 <a href="/" class="text-warning text-decoration-none fw-bold font-renfrew responsive-logo">Two And A Box</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,86 +61,138 @@
                     </div>
                 </div>
             </div>
-        </section><section id="testimonials" class="py-3" >
+        </section>
+        <section id="testimonials" class="py-5">
             <div class="container px-4">
-                <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000">
-                    <div class="carousel-inner text-center">
-                        <div class="carousel-item active">
-                            <p class="lead mb-0 text-dark">"Two And A Box hat unsere Hochzeit zu etwas ganz Besonderem gemacht. Die Musikauswahl war perfekt und die Stimmung großartig!" - Marie & Thomas K., Wiesbaden</p>
+                <div class="testimonial-container">
+                    <div class="testimonial-card">
+                        <div class="card bg-light text-light">
+                            <div class="card-body">
+                                <svg class="quote-icon" viewBox="0 0 24 24">
+                                    <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
+                                </svg>
+                                <p class="card-text">Two And A Box hat unsere Hochzeit zu etwas ganz Besonderem gemacht. Die Musikauswahl war perfekt und die Stimmung großartig!</p>
+                                <footer class="text-warning">Marie & Thomas K., Wiesbaden</footer>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <p class="lead mb-0 text-dark">"Professionell, flexibel und mit viel Gefühl für die richtige Musik zum richtigen Zeitpunkt. Absolut empfehlenswert!" - Stefan M., Firmenevent Frankfurt</p>
+                    </div>
+                    <div class="testimonial-card d-none-mobile">
+                        <div class="card bg-light text-light">
+                            <div class="card-body">
+                                <svg class="quote-icon" viewBox="0 0 24 24">
+                                    <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
+                                </svg>
+                                <p class="card-text">Professionell, flexibel und mit viel Gefühl für die richtige Musik zum richtigen Zeitpunkt. Absolut empfehlenswert!</p>
+                                <footer class="text-warning">Stefan M., Firmenevent Frankfurt</footer>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <p class="lead mb-0 text-dark">"Eine Band, die ihr Handwerk versteht. Haben unser Sommerfest perfekt musikalisch begleitet." - Christina R., Mainz</p>
+                    </div>
+                    <div class="testimonial-card d-none-mobile">
+                        <div class="card bg-light text-light">
+                            <div class="card-body">
+                                <svg class="quote-icon" viewBox="0 0 24 24">
+                                    <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
+                                </svg>
+                                <p class="card-text">Eine Band, die ihr Handwerk versteht. Haben unser Sommerfest perfekt musikalisch begleitet.</p>
+                                <footer class="text-warning">Christina R., Mainz</footer>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="anlässe" class="py-5 bg-dark">
+        <section id="anlässe" class="py-5 bg-gray-800">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="ratio ratio-4x3 rounded overflow-hidden">
-                            <img src="images/Rainer_Strassenfest.webp?height=1080&width=1080" alt="Anlässe" class="img-fluid object-fit-cover rounded">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
+                    <div class="col-lg-6 order-2 order-lg-1">
                         <h2 class="display-5 fw-bold text-warning mb-4">Anlässe</h2>
-                        <p class="lead text-light">
-                            Wir bieten die perfekte musikalische Untermalung für verschiedene Anlässe. Von intimen Hochzeitsfeiern bis hin zu großen Firmeneventss - unser vielseitiges Repertoire passt sich Ihren Bedürfnissen an.
+                        <p class="lead text-light mb-4">
+                            Wir bieten die perfekte musikalische Untermalung für verschiedene Anlässe. Von intimen Hochzeitsfeiern bis hin zu großen Firmenevents - unser vielseitiges Repertoire passt sich Ihren Bedürfnissen an.
                         </p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="formation" class="py-5 bg-gray-800">
-            <div class="container px-4">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-6">
-                        <div id="formationCarousel" class="carousel slide ratio ratio-4x3 rounded overflow-hidden" data-bs-ride="carousel" data-bs-interval="10000">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div id="formationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                            <div class="carousel-inner rounded overflow-hidden">
                                 <div class="carousel-item active">
-                                    <img src="images/Rainer_grosse_Buehne.webp" alt="Rainer auf der großen Bühne" class="img-fluid object-fit-cover rounded">
+                                    <img src="images/Rainer_grosse_Buehne.webp" alt="Rainer auf der großen Bühne" class="img-fluid w-100 object-fit-cover">
+                                    <div class="carousel-caption d-none d-md-block text-start">
+                                        <h5>Strassenfeste</h5>
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="images/Sybilla_stage_black_dress.webp" alt="Sybilla auf der Bühne" class="img-fluid object-fit-cover rounded">
+                                    <img src="images/Sybilla_stage_black_dress.webp" alt="Sybilla auf der Bühne" class="img-fluid w-100 object-fit-cover">
+                                    <div class="carousel-caption d-none d-md-block text-start">
+                                        <h5>Konzerte</h5>
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="images/Rainer_Gitarre.webp" alt="Rainer mit Gitarre" class="img-fluid object-fit-cover rounded">
+                                    <img src="images/Rainer_Gitarre.webp" alt="Rainer mit Gitarre" class="img-fluid w-100 object-fit-cover">
+                                    <div class="carousel-caption d-none d-md-block text-start">
+                                        <h5>Privatfeiern</h5>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="carousel-controls-wrapper">
-                                <button class="carousel-control-prev" type="button" data-bs-target="#formationCarousel" data-bs-slide="prev">
+                            <div class="carousel-controls-wrapper d-flex justify-content-center align-items-center gap-4 mt-3">
+                                <button class="carousel-control-prev position-relative" type="button" data-bs-target="#formationCarousel" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#formationCarousel" data-bs-slide="next">
+                                <div class="carousel-indicators position-relative mb-0 d-flex gap-2">
+                                    <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#formationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <button class="carousel-control-next position-relative" type="button" data-bs-target="#formationCarousel" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <h2 class="display-5 fw-bold text-warning mb-4">Formation</h2>
-                        <p class="lead text-light">
-                            Erleben Sie die Flexibilität von Two And A Box. Als Duo oder Trio passen wir uns perfekt an Ihre Veranstaltung an, ohne dabei an musikalischer Qualität einzubüßen.
-                        </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formation" class="py-5 bg-dark">
+            <div class="container px-4">
+                <h2 class="display-5 fw-bold text-warning mb-3 text-center">Formation</h2>
+                <p class="lead text-light text-center mb-5">
+                    Flexibel und vielseitig - wählen Sie die perfekte Besetzung für Ihren Anlass
+                </p>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card bg-light text-light h-100 formation-card">
+                            <img src="images/Rainer_Gitarre.webp" class="card-img-top" alt="One-Man-Show">
+                            <div class="card-body">
+                                <h3 class="card-title h4 text-warning mb-3">One-Man-Show</h3>
+                                <p class="card-text">Die perfekte Wahl für intime Veranstaltungen. Akustische Gitarre und Gesang verschmelzen zu einem authentischen Klangerlebnis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card bg-light text-light h-100 formation-card">
+                            <img src="images/Sybilla_stage_black_dress.webp" class="card-img-top" alt="Duo">
+                            <div class="card-body">
+                                <h3 class="card-title h4 text-warning mb-3">Duo</h3>
+                                <p class="card-text">Gitarre und Gesang im harmonischen Zusammenspiel. Ideal für mittelgroße Events mit breitem musikalischem Spektrum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card bg-light text-light h-100 formation-card">
+                            <img src="images/Rainer_grosse_Buehne.webp" class="card-img-top" alt="Trio">
+                            <div class="card-body">
+                                <h3 class="card-title h4 text-warning mb-3">Trio</h3>
+                                <p class="card-text">Die volle Bandbreite mit Cajon/Percussion. Kraftvoller Sound für große Veranstaltungen und Festivals.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="programm" class="py-5 bg-dark">
+        <section id="programm" class="py-5 bg-gray-800">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6 order-lg-2">
@@ -158,7 +210,7 @@
             </div>
         </section>
 
-        <section id="kontakt" class="py-5 bg-gray-800">
+        <section id="kontakt" class="py-5 bg-dark">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6 order-1 order-lg-1">
@@ -168,7 +220,7 @@
                         </p>
                     </div>
                     <div class="col-lg-6 order-2 order-lg-2">
-                        <form name="contact" method="POST" data-netlify="true" class="bg-gray-800 p-4 rounded">
+                        <form name="contact" method="POST" data-netlify="true" class="bg-dark p-4 rounded">
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="vorname" placeholder="Vorname" required>
@@ -197,7 +249,7 @@
 
     <footer class="py-4">
         <div class="container px-4 text-center text-secondary">
-            <p class="mb-0">© <span id="year"></span> <span class="font-renfrew"><small>Two And A Box</small></span>. All rights reserved. <a href="/impressum.html" class="text-secondary">Impressum</a></p>
+            <p class="mb-0"> <span id="year"></span> <span class="font-renfrew"><small>Two And A Box</small></span>. All rights reserved. <a href="/impressum.html" class="text-secondary">Impressum</a></p>
         </div>
     </footer>
 

@@ -1,6 +1,19 @@
 // Update copyright year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Testimonials rotation
+function rotateTestimonials() {
+    const groups = document.querySelectorAll('.testimonial-group');
+    let activeGroup = document.querySelector('.testimonial-group.active');
+    let nextGroup = activeGroup.nextElementSibling || groups[0];
+
+    activeGroup.classList.remove('active');
+    nextGroup.classList.add('active');
+}
+
+// Initialize testimonials rotation
+setInterval(rotateTestimonials, 10000);
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
