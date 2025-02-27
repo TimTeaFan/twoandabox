@@ -14,6 +14,8 @@
   --bs-alert: #F87060;
   --bs-alert-rgb: 248, 112, 96;
   --bs-dark: #000000;
+  --bs-btn-color: #fbff00 !important;
+  --bs-btn-border-color: #fbff00 !important;
 }
 
 .btn-warning {
@@ -408,10 +410,12 @@ body {
 .pagination-container button {
   border-radius: 4px;
   transition: all 0.2s ease;
+  color: #fbff00;
+  border-color: #fbff00;
 }
 
 .pagination-container button:hover:not(:disabled) {
-  background-color: var(--bs-warning);
+  background-color: #fbff00;
   color: #212529;
 }
 

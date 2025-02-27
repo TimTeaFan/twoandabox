@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let allSongs = [];
     let filteredSongs = [];
     let currentPage = 1;
-    const songsPerPageDesktop = 15;
-    const songsPerPageMobile = 10;
+    const songsPerPageDesktop = 8;
+    const songsPerPageMobile = 8;
     let songsPerPage = window.innerWidth >= 992 ? songsPerPageDesktop : songsPerPageMobile;
     
     // DOM elements
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading songs:', error);
             songTableBody.innerHTML = `
                 <tr>
-                    <td colspan="2" class="text-center text-danger">
+                    <td class="text-center text-danger">
                         Fehler beim Laden der Songs. Bitte versuchen Sie es später erneut.
                     </td>
                 </tr>
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (filteredSongs.length === 0) {
             songTableBody.innerHTML = `
                 <tr>
-                    <td colspan="2" class="text-center">
+                    <td class="text-center">
                         Keine Songs gefunden.
                     </td>
                 </tr>
@@ -117,35 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Calculate how many rows we need
-        const rowCount = Math.ceil(Math.min(songsPerPage, endIndex - startIndex) / (window.innerWidth >= 992 ? 2 : 1));
-        
         // Add songs to table
-        for (let i = 0; i < rowCount; i++) {
-            const leftIndex = startIndex + i;
-            const rightIndex = window.innerWidth >= 992 ? startIndex + i + Math.ceil(songsPerPage / 2) : null;
+        for (let i = startIndex; i < endIndex; i++) {
+            const song = filteredSongs[i];
             
             // Skip if we're out of bounds
-            if (leftIndex >= filteredSongs.length) {
+            if (i >= filteredSongs.length) {
                 break;
             }
             
             const row = document.createElement('tr');
             
-            // Left column (always visible)
-            const leftCell = document.createElement('td');
-            leftCell.textContent = filteredSongs[leftIndex].title;
-            row.appendChild(leftCell);
+            // Create cell for song title
+            const cell = document.createElement('td');
+            cell.textContent = song.title;
+            row.appendChild(cell);
             
-            // Right column (desktop only)
-            const rightCell = document.createElement('td');
-            rightCell.className = 'd-none d-lg-table-cell';
-            
-            if (rightIndex !== null && rightIndex < filteredSongs.length) {
-                rightCell.textContent = filteredSongs[rightIndex].title;
-            }
-            
-            row.appendChild(rightCell);
             songTableBody.appendChild(row);
         }
         
