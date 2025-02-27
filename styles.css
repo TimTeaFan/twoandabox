@@ -7,10 +7,10 @@
   src: url("fonts/Renfrew.ttf") format("truetype");
 }
 :root {
-  --bs-warning: #fbff00;
-  --bs-warning-rgb: 251, 255, 0;
   --bs-primary: #fbff00;
   --bs-primary-rgb: 251, 255, 0;
+  --bs-warning: #c004ff;
+  --bs-warning-rgb: 192, 4, 255;
   --bs-alert: #F87060;
   --bs-alert-rgb: 248, 112, 96;
   --bs-dark: #000000;
@@ -22,8 +22,8 @@
 }
 
 .btn-warning:hover {
-  background-color: #F87060 !important;
-  border-color: #F87060 !important;
+  background-color: #c004ff !important;
+  border-color: #c004ff !important;
 }
 
 section {
@@ -31,7 +31,7 @@ section {
 }
 
 #testimonials {
-  background: #181700;
+  background: #110811;
   margin: 0;
   padding: 2rem 0;
 }
@@ -79,13 +79,13 @@ section {
 
 .testimonial-card .card {
   height: 100%;
-  border: 1px solid rgba(251, 255, 0, 0.2);
+  border: 1px solid rgba(204, 255, 0, 0.205);
 }
 
 .quote-icon {
   width: 40px;
   height: 40px;
-  fill: var(--bs-warning);
+  fill: var(--bs-primary);
   margin-bottom: 1rem;
 }
 
@@ -240,11 +240,15 @@ section {
 }
 
 .bg-dark {
-  background-color: #181700 !important
+  background-color: #0d060d !important
+}
+
+.bg-gray-800 {
+  background-color: #160b16;
 }
 
 .bg-light {
-  background-color: #252323 !important
+  background-color: #3f323f4f !important
 }
 
 .text-dark {
@@ -270,7 +274,7 @@ body {
 }
 
 .form-control:focus {
-  border-color: var(--bs-warning);
+  border-color: var(--bs-primary);
   box-shadow: 0 0 0 0.25rem rgba(251, 255, 0, 1);
 }
 
@@ -282,10 +286,6 @@ body {
 
 .min-vh-70 {
   min-height: 70vh;
-}
-
-.bg-gray-800 {
-  background-color: #201F12;
 }
 
 .hover-warning {
@@ -331,6 +331,107 @@ body {
   }
   .lead {
     font-size: 1.1rem;
+  }
+}
+
+/* Song Table Styles */
+.song-table-container {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#songTable {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+#songTable thead th {
+  background-color: #212529;
+  border-bottom: 2px solid var(--bs-warning);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  color: var(--bs-warning);
+}
+
+#songTable tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#songTable tbody tr:last-child {
+  border-bottom: none;
+}
+
+#songTable tbody tr:hover {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+  cursor: pointer;
+  transform: translateX(3px);
+}
+
+#songTable td {
+  border-color: #444;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.search-container input {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  background-color: #3a3a3a;
+  border-color: var(--bs-warning);
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+  color: #fff;
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+}
+
+.pagination-container {
+  margin-top: 1rem;
+}
+
+.pagination-container button {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.pagination-container button:hover:not(:disabled) {
+  background-color: var(--bs-warning);
+  color: #212529;
+}
+
+.pagination-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#pageInfo {
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .song-table-container {
+    padding: 1rem;
+  }
+  
+  #songTable td {
+    padding: 0.5rem;
   }
 }
 
