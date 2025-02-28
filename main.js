@@ -31,28 +31,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Add active class to nav links based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
+function updateActiveNavLink() {
+    // Only run on desktop (not when burger menu is visible)
+    if (window.innerWidth < 992) return; // 992px is Bootstrap's lg breakpoint
     
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    // Get current scroll position with some offset
+    const scrollPosition = window.scrollY + 100; // Adding offset to trigger earlier
+    
+    // Find the current section
     let currentSection = '';
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (window.scrollY >= sectionTop - 100) {
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             currentSection = section.getAttribute('id');
         }
     });
     
+    // Special case: if we're at the bottom of the page, highlight the last nav item (Kontakt)
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        currentSection = 'kontakt';
+    }
+    
+    // If we're at the top of the page, highlight the first nav item (Home)
+    if (window.scrollY < 100) {
+        currentSection = 'home';
+    }
+    
+    // Update active link
     navLinks.forEach(link => {
+        // Remove existing highlight from all links
         link.classList.remove('text-warning');
-        if (link.getAttribute('href').substring(1) === currentSection) {
+        
+        // Add highlight to current section's link
+        const href = link.getAttribute('href').substring(1);
+        if (href === currentSection) {
             link.classList.add('text-warning');
         }
     });
-});
+}
+
+// Run on scroll and on page load
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('resize', updateActiveNavLink);
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
 
 // Song Table Functionality
 document.addEventListener('DOMContentLoaded', () => {
