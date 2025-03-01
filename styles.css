@@ -4,7 +4,35 @@
 
 @font-face {
   font-family: "Renfrew";
-  src: url("fonts/Renfrew.ttf") format("truetype");
+  src: url("assets/fonts/Renfrew.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("assets/fonts/raleway/Raleway-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("assets/fonts/raleway/Raleway-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("assets/fonts/raleway/Raleway-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("assets/fonts/raleway/Raleway-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
 
 :root {
@@ -21,7 +49,7 @@
 
 body {
   font-family: Raleway, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .btn-warning {
@@ -346,6 +374,7 @@ section {
 .lead {
   font-size: 1.25rem;
   line-height: 1.6;
+  font-weight: 500 !important;
 }
 
 @media (max-width: 1000px) {
