@@ -49,7 +49,7 @@
 
 body {
   font-family: Raleway, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .btn-warning {
@@ -374,7 +374,7 @@ section {
 .lead {
   font-size: 1.25rem;
   line-height: 1.6;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 
 @media (max-width: 1000px) {
@@ -504,5 +504,5 @@ section {
 }
 
 footer {
-  font-weight: 400;
+  font-weight: 500;
 }
