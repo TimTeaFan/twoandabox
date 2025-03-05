@@ -21,6 +21,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
+        // Check if burger menu is open and we're on mobile
+        const navbarCollapse = document.getElementById('navbarNav');
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        
+        // If the menu is open and we're on mobile, close it
+        if (window.innerWidth < 992 && bsCollapse && navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+        }
+        
         if (targetElement) {
             targetElement.scrollIntoView({
                 behavior: 'smooth',
