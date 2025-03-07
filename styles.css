@@ -78,6 +78,15 @@ section {
   position: relative;
 }
 
+/* Background image only on desktop (not on mobile) */
+@media (min-width: 992px) {
+  #home {
+    background-image: url('images/purple_background3.webp');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 #home::before {
   content: '';
   position: absolute;
@@ -378,6 +387,12 @@ section {
   font-weight: 500 !important;
 }
 
+@media (max-width: 1150px) and (min-width: 1001px) {
+  .display-4 {
+    font-size: 2.9rem;
+  }
+}
+
 @media (max-width: 1000px) {
   .display-4 {
     font-size: 2.5rem;
@@ -506,7 +521,7 @@ section {
 
 footer {
   font-weight: 500;
-  border-top: 1px solid #272727;
+  /* border-top: 1px solid #272727; */
 }
 
 footer.text-primary {
@@ -517,10 +532,16 @@ footer.text-primary {
 /* Link colors */
 a {
   color: #fbff00;
+  text-decoration: none;
 }
 
 a:visited {
   color: #fbff00;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c004ff;
 }
 
 a.btn {
@@ -550,4 +571,300 @@ a:visited.btn {
 
 .card {
   border: 1px solid rgba(204, 255, 0, 0.205);
+}
+
+/* Bilder größer darstellen */ 
+#anlässe, #home {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+@media (max-width: 991px) {
+  #anlässe {
+    padding-top: 48px !important;
+  }
+}
+
+#anlässe > div > div > div.col-lg-7 {
+  margin-top: 0px !important;  
+}
+
+#home::before {
+  background-color: transparent !important;
+}
+
+#testimonials {
+  padding-bottom: 72px !important
+}
+
+.carousel-item > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ähnlich wie background-size: cover */
+  object-position: center top; /* Fokus auf den oberen Bereich */
+}
+
+#kontaktbtn {
+  margin-bottom: 24px;
+}
+
+/* Referenzen Section Styles */
+#referenzen .tabs-container {
+  position: relative;
+}
+
+#referenzen .tabs {
+  gap: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+#referenzen .tab {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #ffffff36;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 767px) {
+  #referenzen .tab {
+    flex: 0 0 calc(50% - 10px);
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  #referenzen .tab {
+    flex: 0 0 100%;
+  }
+}
+
+#referenzen .tab:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#referenzen .tab-all:hover {
+  border-color: #fff !important;
+}
+
+#referenzen .tab-all.active {
+  background-color: #fff;
+  color: #000;
+}
+
+#referenzen .tab-yellow.active {
+  background-color: var(--bs-primary) !important;
+  color: #000;
+}
+
+#referenzen .tab-purple.active {
+  background-color: var(--bs-warning) !important;
+  color: #fff;
+}
+
+#referenzen .tab-blue.active {
+  background-color: #0062fffd !important;
+  color: #fff;
+}
+
+#referenzen .tab-yellow {
+  border: 1px solid rgb(97, 99, 0);
+}
+
+#referenzen .tab-purple {
+  border: 1px solid rgba(199, 29, 255, 0.474);
+}
+
+#referenzen .tab-blue {
+  border: 1px solid #0062ff86;
+}
+
+#referenzen .search-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(251, 255, 0, 0.2);
+  color: #fff;
+  padding: 12px 20px;
+}
+
+#referenzen .search-input:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(251, 255, 0, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(251, 255, 0, 0.15);
+  color: #fff;
+}
+
+#referenzen .search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#referenzen .references-navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#referenzen .content-area {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#referenzen .reference-nav-arrow {
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: var(--bs-primary);
+  padding: 0 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 2;
+}
+
+#referenzen .reference-nav-arrow:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+#referenzen .reference-nav-arrow:disabled {
+  color: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+  transform: none;
+}
+
+#referenzen .reference-nav-arrow i {
+  font-size: 3rem;
+}
+
+@media (max-width: 767px) {
+  #referenzen .reference-nav-arrow i {
+    font-size: 2rem;
+  }
+  
+  #referenzen .reference-nav-arrow {
+    padding: 0 5px;
+  }
+}
+
+#referenzen .reference-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  min-height: 300px;
+}
+
+@media (max-width: 1036px) {
+  #referenzen .reference-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 756px) {
+  #referenzen .reference-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+#referenzen .reference-item {
+  padding: 15px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.3s;
+  border-left: 4px solid transparent;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+#referenzen .reference-item.category-weingüter {
+  border: 1px solid rgb(97, 99, 0);
+}
+
+#referenzen .reference-item.category-weingüter:hover, #referenzen .tab-yellow:hover {
+  border-color: var(--bs-primary);
+}
+
+#referenzen .reference-item.category-feste {
+  border: 1px solid rgba(199, 29, 255, 0.474);
+}
+
+#referenzen .reference-item.category-feste:hover, #referenzen .tab-purple:hover  {
+  border-color: var(--bs-warning);
+}
+
+#referenzen .reference-item.category-firmen {
+  border: 1px solid #0062ff86;
+}
+
+#referenzen .reference-item.category-firmen:hover, #referenzen .tab-blue:hover  {
+  border-color: #0062fffd;
+}
+
+
+
+#referenzen .reference-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #fff;
+  width: 250px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#referenzen .reference-location {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  width: 250px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#referenzen .no-results {
+  text-align: center;
+  padding: 40px 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 767px) {
+  #referenzen .reference-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+#referenzen .reference-pagination {
+  margin-top: 15px;
+}
+
+#referenzen .reference-pagination .page-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#referenzen .reference-pagination .page-dot.active {
+  background-color: var(--bs-primary);
+  transform: scale(1.2);
 }

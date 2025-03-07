@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Band References</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .references-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 25px;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      color: #2d3748;
+    }
+    
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #718096;
+      position: relative;
+      transition: all 0.2s;
+    }
+    
+    .tab.active {
+      color: #3182ce;
+    }
+    
+    .tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #3182ce;
+      border-radius: 3px 3px 0 0;
+    }
+    
+    .search-container {
+      margin-bottom: 20px;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 12px 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #3182ce;
+      box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    .content-area {
+      height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+      border-radius: 6px;
+      background-color: white;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+    
+    .reference-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 10px;
+    }
+    
+    .reference-item {
+      padding: 12px;
+      border-radius: 6px;
+      background-color: #f0f4f8;
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+    
+    .reference-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    }
+    
+    .reference-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .reference-location {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    
+    .content-area::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .content-area::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    
+    .content-area::-webkit-scrollbar-thumb {
+      background: #c5d0e6;
+      border-radius: 4px;
+    }
+    
+    .content-area::-webkit-scrollbar-thumb:hover {
+      background: #a9b9d1;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 40px 0;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<div class="references-section">
+  <h2>Unsere Referenzen</h2>
+  
+  <div class="tabs">
+    <button class="tab active" data-category="all">Alle Referenzen</button>
+    <button class="tab" data-category="wineries">Weingüter & Hoffeste</button>
+    <button class="tab" data-category="festivals">Wein- & Straßenfeste</button>
+    <button class="tab" data-category="companies">Firmen & Vereine</button>
+  </div>
+  
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Referenz oder Ort suchen...">
+  </div>
+  
+  <div class="content-area">
+    <div class="reference-list" id="references-container">
+      <!-- References will be populated here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Sample data (in production, you'd load your complete JSON)
+  const referencesData = {
+    wineries: [
+      {"name": "Weingut Kunz", "ort": "Oestrich"},
+      {"name": "Weinhof Martinshof", "ort": "Erbach"},
+      {"name": "Weingut Werner Engelmann", "ort": "Martinsthal"},
+      {"name": "Weingut Gauer", "ort": "Bodenheim"},
+      {"name": "Weingut Alt Schmiede Schüler-Katz", "ort": "Kiedrich"},
+      {"name": "Weingut Schuh Beim Elsje", "ort": "Hattenheim"}
+    ],
+    festivals: [
+      {"name": "Weinfest", "ort": "Bad Schwalbach/Taunus"},
+      {"name": "Soest Weinfest im Park", "ort": "Soest"},
+      {"name": "Fest des jungen Weines", "ort": "Gau Algesheim"},
+      {"name": "Wein im Park", "ort": "Bad Kreuznach"},
+      {"name": "Osnabrück vor dem Dom", "ort": "Osnabrück"},
+      {"name": "Flensburg an der Hafenspitze", "ort": "Flensburg"}
+    ],
+    companies: [
+      {"name": "Lumen", "ort": "Wiesbaden"},
+      {"name": "Radisson SAS Schwarzer Bock", "ort": "Wiesbaden"},
+      {"name": "Kulturamt Wiesbaden Stadtteilfeste", "ort": "Wiesbaden"},
+      {"name": "Stadtverwaltung Bingen", "ort": "Bingen"},
+      {"name": "Getränkemesse Bremen", "ort": "Bremen"},
+      {"name": "Scivias Klinik", "ort": "Rüdesheim"}
+    ]
+  };
+  
+  // DOM Elements
+  const tabButtons = document.querySelectorAll('.tab');
+  const searchInput = document.querySelector('.search-input');
+  const referencesContainer = document.getElementById('references-container');
+  
+  // Current state
+  let activeCategory = 'all';
+  let searchTerm = '';
+  
+  // Initialize the display
+  displayReferences();
+  
+  // Event Listeners
+  tabButtons.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabButtons.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeCategory = tab.dataset.category;
+      displayReferences();
+    });
+  });
+  
+  searchInput.addEventListener('input', (e) => {
+    searchTerm = e.target.value.toLowerCase();
+    displayReferences();
+  });
+  
+  // Function to display references based on current filters
+  function displayReferences() {
+    // Clear the container
+    referencesContainer.innerHTML = '';
+    
+    // Get references to display
+    let referencesToShow = [];
+    
+    if (activeCategory === 'all') {
+      Object.keys(referencesData).forEach(category => {
+        referencesData[category].forEach(ref => {
+          referencesToShow.push({...ref, category});
+        });
+      });
+    } else {
+      referencesToShow = referencesData[activeCategory].map(ref => ({...ref, category: activeCategory}));
+    }
+    
+    // Apply search filtering
+    if (searchTerm) {
+      referencesToShow = referencesToShow.filter(ref => 
+        ref.name.toLowerCase().includes(searchTerm) || 
+        ref.ort.toLowerCase().includes(searchTerm)
+      );
+    }
+    
+    // Display the references
+    if (referencesToShow.length === 0) {
+      referencesContainer.innerHTML = `
+        <div class="no-results">
+          <p>Keine Ergebnisse gefunden</p>
+        </div>
+      `;
+      return;
+    }
+    
+    referencesToShow.forEach(ref => {
+      const referenceElement = document.createElement('div');
+      referenceElement.className = 'reference-item';
+      
+      referenceElement.innerHTML = `
+        <div class="reference-name">${ref.name}</div>
+        <div class="reference-location">${ref.ort}</div>
+      `;
+      
+      referencesContainer.appendChild(referenceElement);
+    });
+  }
+</script>
+
+</body>
+</html>

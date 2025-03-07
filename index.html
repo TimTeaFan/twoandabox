@@ -32,6 +32,9 @@
                         <a class="nav-link text-light hover-warning" href="#programm">Programm</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-light hover-warning" href="#referenzen">Referenzen</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-light hover-warning" href="#kontakt">Kontakt</a>
                     </li>
                     </ul>
@@ -42,28 +45,28 @@
     </header>
 
     <main>
-        <section id="home" class="bg-gray-800 py-5" style="background-image: url('images/purple_background2.webp'); background-size: cover; background-position: center;">
+        <section id="home" class="py-5 bg-gray-800">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
-                    <div class="col-lg-6">
-                        <div class="rounded overflow-hidden">
-                            <img src="images/All_Three_Rockig_Stage.webp" alt="Two And A Box performing live" class="img-fluid object-fit-cover rounded">
+                    <div class="col-lg-7">
+                        <div class="overflow-hidden">
+                            <img src="images/Three_Panel_Color.webp" alt="Two And A Box performing live" class="img-fluid object-fit-cover">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <h1 class="display-4 fw-bold text-primary mb-4 font-renfrew">Two And A Box</h1>
                         <p class="lead text-light mb-4">
                             Experience the unique blend of rhythm and melody as we redefine the boundaries of modern music. Two And
                             A Box brings you an unforgettable journey through sound.
                         </p>
                         <div class="d-flex gap-3 flex-wrap">
-                            <a href="#kontakt" class="btn btn-warning btn-lg rounded-3">Jetzt kontaktieren</a>
+                            <a href="#kontakt" id="kontaktbtn" class="btn btn-warning btn-lg rounded-3">Jetzt kontaktieren</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="testimonials" class="py-5">
+        <section id="testimonials" class="py-5 bg-dark">
             <div class="container px-4">
                 <div class="testimonial-container">
                     <div class="testimonial-card">
@@ -106,15 +109,15 @@
         <section id="anlässe" class="py-5 bg-gray-800">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
-                    <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="col-lg-5 order-1 order-lg-1">
                         <h2 class="display-5 fw-bold text-primary mb-4">Anlässe</h2>
                         <p class="lead text-light mb-4">
                             Wir bieten die perfekte musikalische Untermalung für verschiedene Anlässe. Von intimen Hochzeitsfeiern bis hin zu großen Firmenevents - unser vielseitiges Repertoire passt sich Ihren Bedürfnissen an.
                         </p>
                     </div>
-                    <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="col-lg-7 order-2 order-lg-2">
                         <div id="formationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-                            <div class="carousel-inner rounded overflow-hidden">
+                            <div class="carousel-inner overflow-hidden">
                                 <div class="carousel-item active">
                                     <img src="images/All_Three_Rockig_Stage.webp" alt="Rainer, Sybilla, Hajo und Drummer spielen auf großer Showbühne" class="img-fluid w-100 object-fit-cover">
                                     <div class="carousel-caption d-none d-md-block text-start">
@@ -262,17 +265,55 @@
             </div>
         </section>
 
-        <section id="kontakt" class="py-5 bg-dark">
+        <section id="referenzen" class="py-5 bg-dark">
+            <div class="container px-4">
+                <h2 class="display-5 fw-bold text-primary mb-4 text-center">Referenzen</h2>
+                
+                <div class="tabs-container mb-4">
+                    <div class="tabs d-flex flex-wrap pb-2">
+                        <button class="tab tab-all active" data-category="all">Alle Referenzen</button>
+                        <button class="tab tab-yellow" data-category="Weingüter und Hoffeste">Weingüter & Hoffeste</button>
+                        <button class="tab tab-purple" data-category="Wein- und Straßenfeste">Wein- & Straßenfeste</button>
+                        <button class="tab tab-blue" data-category="Firmen, Vereine, Stadtverwaltungen">Firmen & Vereine</button>
+                    </div>
+                </div>
+                
+                <div class="search-container mb-4">
+                    <input type="text" class="form-control search-input" placeholder="Referenz oder Ort suchen...">
+                </div>
+                
+                <div class="references-navigation-container position-relative">
+                    <button class="reference-nav-arrow reference-nav-prev" id="referencesPrev" aria-label="Previous references">
+                        <i class="fas fa-caret-left"></i>
+                    </button>
+                    
+                    <div class="content-area">
+                        <div class="reference-list" id="references-container">
+                            <!-- References will be populated here by JavaScript -->
+                        </div>
+                        <div class="reference-pagination mt-3 d-flex justify-content-center" id="references-pagination">
+                            <!-- Pagination will be populated here by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <button class="reference-nav-arrow reference-nav-next" id="referencesNext" aria-label="Next references">
+                        <i class="fas fa-caret-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-5 bg-gray-800">
             <div class="container px-4">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6 order-1 order-lg-1">
                         <h2 class="display-5 fw-bold text-primary mb-4">Kontakt</h2>
                         <p class="lead text-light">
-                            Möchten Sie Two And A Box für Ihre Veranstaltung buchen oder haben Sie Fragen? Kontaktieren Sie uns unter info@twoandabox.com oder rufen Sie uns an: +41 123 456 789. Wir freuen uns darauf, Ihr Event musikalisch zu begleiten!
+                            Möchten Sie Two And A Box für Ihre Veranstaltung buchen oder haben Sie Fragen? Kontaktieren Sie uns unter <a href="mailto:twoandabox@gmx.de">twoandabox@gmx.de</a> oder rufen Sie uns an: <a href="tel:+491776332335">0177 633 233 5</a>. Wir freuen uns darauf, Ihr Event musikalisch zu begleiten!
                         </p>
                     </div>
                     <div class="col-lg-6 order-2 order-lg-2">
-                        <form name="contact" method="POST" class="bg-dark p-4 rounded" netlify>
+                        <form name="contact" method="POST" class="bg-gray-800 p-4 rounded" netlify>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="vorname" placeholder="Vorname" required>
@@ -310,12 +351,12 @@
                 <div class="col-md-6 text-md-end">
                     <h5 class="text-primary mb-3">Kontakt</h5>
                     <p class="text-light mb-1">Rainer Tiefenbach</p>
-                    <p class="text-light mb-1"><i class="fas fa-phone me-2"></i> +49 177 6332335</p>
-                    <p class="text-light mb-3"><i class="fas fa-envelope me-2"></i> twoandabox[at]gmx.de</p>
+                    <p class="text-light mb-1"><a href="tel:+491776332335"><i class="fas fa-phone me-2"></i>0177 633 233 5</a></p>
+                    <p class="text-light mb-3"><a href="mailto:twoandabox@gmx.de"><i class="fas fa-envelope me-2"></i>twoandabox@gmx.de</a></p>
                 </div>
                 <div class="col-12 text-center mt-2">
-                    <a href="/impressum.html" class="text-light me-3 text-decoration-none hover-primary">Impressum</a>
-                    <a href="/data_policy.html" class="text-light text-decoration-none hover-primary">Datenschutzerklärung</a>
+                    <a href="/impressum.html" class="text-light me-3 text-decoration-none hover-warning">Impressum</a>
+                    <a href="/data_policy.html" class="text-light text-decoration-none hover-warning">Datenschutzerklärung</a>
                 </div>
             </div>
         </div>
@@ -324,5 +365,218 @@
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
     <link href="assets/fontawesome/all.min.css" rel="stylesheet">
     <script src="main.js"></script>
+    
+    <!-- Referenzen Section Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const tabButtons = document.querySelectorAll('#referenzen .tab');
+            const searchInput = document.querySelector('#referenzen .search-input');
+            const referencesContainer = document.getElementById('references-container');
+            const referencesPagination = document.getElementById('references-pagination');
+            const prevButton = document.getElementById('referencesPrev');
+            const nextButton = document.getElementById('referencesNext');
+            
+            // Current state
+            let activeCategory = 'all';
+            let searchTerm = '';
+            let referencesData = {};
+            let currentPage = 1;
+            let totalPages = 1;
+            
+            // Configuration
+            let itemsPerPage = getItemsPerPage();
+            
+            // Function to determine items per page based on screen size
+            function getItemsPerPage() {
+                const width = window.innerWidth;
+                if (width >= 1036) { // Large screens: 4 rows x 3 columns
+                    return 12;
+                } else if (width >= 756) { // Medium screens: 4 rows x 2 columns
+                    return 8;
+                } else { // Mobile: 4 rows x 1 column
+                    return 4;
+                }
+            }
+            
+            // Update items per page on window resize
+            window.addEventListener('resize', () => {
+                const newItemsPerPage = getItemsPerPage();
+                if (newItemsPerPage !== itemsPerPage) {
+                    itemsPerPage = newItemsPerPage;
+                    displayReferences();
+                }
+            });
+            
+            // Initialize tooltips after DOM is fully loaded
+            function initTooltips() {
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            }
+            
+            // Load references data
+            fetch('referenzen.json')
+                .then(response => response.json())
+                .then(data => {
+                    referencesData = data;
+                    displayReferences();
+                })
+                .catch(error => {
+                    console.error('Error loading references:', error);
+                    referencesContainer.innerHTML = `
+                        <div class="no-results">
+                            <p>Fehler beim Laden der Referenzen</p>
+                        </div>
+                    `;
+                });
+            
+            // Event Listeners
+            tabButtons.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabButtons.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    activeCategory = tab.dataset.category;
+                    currentPage = 1; // Reset to first page when changing category
+                    displayReferences();
+                });
+            });
+            
+            searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value.toLowerCase();
+                currentPage = 1; // Reset to first page when searching
+                displayReferences();
+            });
+            
+            // Navigation buttons
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayReferences();
+                }
+            });
+            
+            nextButton.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayReferences();
+                }
+            });
+            
+            // Function to display references based on current filters and page
+            function displayReferences() {
+                // Clear the containers
+                referencesContainer.innerHTML = '';
+                referencesPagination.innerHTML = '';
+                
+                if (!referencesData || Object.keys(referencesData).length === 0) {
+                    return;
+                }
+                
+                // Get all references that match the current filters
+                let allFilteredReferences = [];
+                
+                if (activeCategory === 'all') {
+                    Object.keys(referencesData).forEach(category => {
+                        referencesData[category].forEach(ref => {
+                            allFilteredReferences.push({...ref, category});
+                        });
+                    });
+                } else {
+                    allFilteredReferences = referencesData[activeCategory].map(ref => ({...ref, category: activeCategory}));
+                }
+                
+                // Apply search filtering
+                if (searchTerm) {
+                    allFilteredReferences = allFilteredReferences.filter(ref => 
+                        ref.name.toLowerCase().includes(searchTerm) || 
+                        ref.ort.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                // Calculate total pages
+                totalPages = Math.ceil(allFilteredReferences.length / itemsPerPage);
+                
+                // Adjust current page if needed
+                if (currentPage > totalPages) {
+                    currentPage = totalPages || 1;
+                }
+                
+                // Update navigation buttons state
+                prevButton.disabled = currentPage <= 1;
+                nextButton.disabled = currentPage >= totalPages;
+                
+                // Display the references for the current page
+                if (allFilteredReferences.length === 0) {
+                    referencesContainer.innerHTML = `
+                        <div class="no-results">
+                            <p>Keine Ergebnisse gefunden</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Calculate start and end indices for the current page
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = Math.min(startIndex + itemsPerPage, allFilteredReferences.length);
+                
+                // Get references for the current page
+                const referencesToShow = allFilteredReferences.slice(startIndex, endIndex);
+                
+                // Create and append reference elements
+                referencesToShow.forEach(ref => {
+                    const referenceElement = document.createElement('div');
+                    referenceElement.className = 'reference-item';
+                    
+                    // Add category-specific class for styling
+                    if (ref.category === 'Weingüter und Hoffeste') {
+                        referenceElement.classList.add('category-weingüter');
+                    } else if (ref.category === 'Wein- und Straßenfeste') {
+                        referenceElement.classList.add('category-feste');
+                    } else if (ref.category === 'Firmen, Vereine, Stadtverwaltungen') {
+                        referenceElement.classList.add('category-firmen');
+                    }
+                    
+                    // Add tooltip only if the text is likely to be truncated
+                    // We'll use a character length check as a heuristic
+                    const MAX_NAME_LENGTH = 29; // Adjust based on your design
+                    const MAX_LOCATION_LENGTH = 35; // Adjust based on your design
+                    
+                    if (ref.name.length > MAX_NAME_LENGTH || ref.ort.length > MAX_LOCATION_LENGTH) {
+                        const tooltip = `${ref.name} - ${ref.ort}`;
+                        referenceElement.setAttribute('title', tooltip);
+                        referenceElement.setAttribute('data-bs-toggle', 'tooltip');
+                        referenceElement.setAttribute('data-bs-placement', 'top');
+                    }
+                    
+                    // Use a simpler structure to ensure text truncation
+                    referenceElement.innerHTML = `
+                        <div class="reference-name" title="${ref.name}">${ref.name}</div>
+                        <div class="reference-location" title="${ref.ort}">${ref.ort}</div>
+                    `;
+                    
+                    referencesContainer.appendChild(referenceElement);
+                });
+                
+                // Initialize tooltips after adding references
+                setTimeout(initTooltips, 100);
+                
+                // Create pagination dots
+                if (totalPages > 1) {
+                    for (let i = 1; i <= totalPages; i++) {
+                        const pageDot = document.createElement('span');
+                        pageDot.className = `page-dot${i === currentPage ? ' active' : ''}`;
+                        pageDot.dataset.page = i;
+                        pageDot.addEventListener('click', () => {
+                            currentPage = parseInt(pageDot.dataset.page);
+                            displayReferences();
+                        });
+                        referencesPagination.appendChild(pageDot);
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
