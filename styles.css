@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Renfrew";
-  src: url("assets/fonts/Renfrew.ttf") format("truetype");
+  src: url("assets/fonts/OnStage-webfont.woff") format("woff");
 }
 
 @font-face {
@@ -349,12 +349,15 @@ section {
 }
 
 .hover-warning {
-  transition: color 0.3s;
+  transition: color 0.4s ease 0.1s;
 }
 .hover-warning:hover {
   color: var(--bs-warning) !important;
 }
 
+.hover-primary {
+  transition: color 0.4s ease 0.1s;
+}
 .hover-primary:hover {
   color: var(--bs-primary) !important;
 }
@@ -513,6 +516,16 @@ section {
   }
 }
 
+/* Hide scrollbar in Firefox */
+.table-responsive {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar in WebKit browsers */
+.table-responsive::-webkit-scrollbar {
+  display: none;
+}
+
 /* Fix Scrolling Issue when clicking navbar items */ 
 section {
   scroll-margin-top: 50px;
@@ -544,6 +557,11 @@ a:hover {
   color: #c004ff;
 }
 
+/* Add transition to all links */
+a {
+  transition: color 0.4s ease 0.1s;
+}
+
 a.btn {
   color: #000;
 }
@@ -562,7 +580,10 @@ a:visited.btn {
 
 .phone-icon:hover {
   color: var(--bs-warning) !important;
-  transition: color 0.3s ease;
+}
+
+.phone-icon {
+  transition: color 0.4s ease 0.1s;
 }
 
 .fa-square-phone {
@@ -867,4 +888,12 @@ a:visited.btn {
 #referenzen .reference-pagination .page-dot.active {
   background-color: var(--bs-primary);
   transform: scale(1.2);
+}
+
+.form-control {
+  font-weight: 500 !important;
+}
+
+::placeholder {
+  color: #ababab !important;
 }
