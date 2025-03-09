@@ -72,8 +72,8 @@ function updateActiveNavLink() {
         currentSection = 'home';
     }
     
-    // Special case: When in testimonials section, highlight Home
-    if (currentSection === 'testimonials') {
+    // Special case: When in testimonials or demo section, highlight Home
+    if (currentSection === 'testimonials' || currentSection === 'demo') {
         currentSection = 'home';
     }
     
