@@ -31,9 +31,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
         
         if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Get the height of the fixed navbar
+            const navbarHeight = document.querySelector('header').offsetHeight;
+            
+            // Get the current position of the target
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            
+            // Calculate the position with the offset (navbar height + extra space)
+            const offsetPosition = targetPosition - navbarHeight;
+            
+            // Scroll to the calculated position
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -113,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageInfo = document.getElementById('pageInfo');
     
     // Fetch songs from JSON file
-    fetch('songs.json')
+    fetch('assets/data/songs.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

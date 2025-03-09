@@ -6,7 +6,7 @@
     <title>Two And A Box</title>
     <!-- Local fonts are now loaded via CSS -->
     <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
     <header class="bg-dark shadow-sm sticky-top">
@@ -114,15 +114,15 @@
                         <p class="lead text-light mb-4">
                             Hier könnt ihr euch unsere Demo direkt anhören oder herunterladen.
                             <br><br>
-                            Falls ihr mehr Soundschnippsel hören wollt, schreibt uns wir schicken euch gerne einen Link per <a href="mailto:twoandabox@gmx.de">E-Mail</a>.
+                            Falls ihr mehr Soundschnippsel hören wollt, schreibt uns, wir schicken euch gerne einen Link per <a href="mailto:twoandabox@gmx.de">E-Mail</a>.
                         </p>
                     </div>
-                    <div class="col-lg-6 order-2 order-lg-2">
-                        <p>Playing now: Two And A Box Demo</p>
+                    <div class="col-lg-6 order-2 order-lg-2" style="margin-top: 0px !important;"">
+                        <p class="lead text-light mb-4" style="margin-bottom: 0px !important;"">Playing now: Two And A Box Demo</p>
                         <div class="audio-player-container">
                             <audio controls class="custom-audio-player">
                                 <source src="downloads/Twoandabox_demo.mp3" type="audio/mpeg">
-                                Dein Browser unterstützt das Audio-Element nicht.
+                                Dein Browser unterstützt den Audio-Player nicht.
                             </audio>
                         </div>
                         <div class="text-center mt-3">
@@ -414,7 +414,7 @@
 
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
     <link href="assets/fontawesome/all.min.css" rel="stylesheet">
-    <script src="main.js"></script>
+    <script src="assets/javascript/main.js"></script>
     
     <!-- Referenzen Section Script -->
     <script>
@@ -467,7 +467,7 @@
             }
             
             // Load references data
-            fetch('referenzen.json')
+            fetch('assets/data/referenzen.json')
                 .then(response => response.json())
                 .then(data => {
                     referencesData = data;

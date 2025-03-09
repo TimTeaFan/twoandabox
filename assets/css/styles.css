@@ -12,33 +12,33 @@
 
 @font-face {
   font-family: "Renfrew";
-  src: url("assets/fonts/OnStage-webfont.woff") format("woff");
+  src: url("../fonts/OnStage-webfont.woff") format("woff");
 }
 
 @font-face {
   font-family: "Raleway";
-  src: url("assets/fonts/raleway/Raleway-Regular.woff2") format("woff2");
+  src: url("../fonts/raleway/Raleway-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Raleway";
-  src: url("assets/fonts/raleway/Raleway-Medium.woff2") format("woff2");
+  src: url("../fonts/raleway/Raleway-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Raleway";
-  src: url("assets/fonts/raleway/Raleway-SemiBold.woff2") format("woff2");
+  src: url("../fonts/raleway/Raleway-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Raleway";
-  src: url("assets/fonts/raleway/Raleway-Bold.woff2") format("woff2");
+  src: url("../fonts/raleway/Raleway-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -89,7 +89,7 @@ section {
 /* Background image only on desktop (not on mobile) */
 @media (min-width: 992px) {
   #home {
-    background-image: url('images/purple_background3.webp');
+    background-image: url('../../images/purple_background3.webp');
     background-size: cover;
     background-position: center;
   }
@@ -645,6 +645,26 @@ section {
 footer {
   font-weight: 500;
   /* border-top: 1px solid #272727; */
+}
+
+/* Footer links - prevent icon and text from separating when wrapping */
+footer a {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments for footer links */
+@media (max-width: 576px) {
+  footer .col-12 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  footer .col-12 a {
+    margin: 0 !important; /* Override the margin spacings */
+  }
 }
 
 footer.text-primary {
