@@ -2,6 +2,14 @@
   max-width: 1200px;
 }
 
+/* Reduce container padding on mobile */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+}
+
 @font-face {
   font-family: "Renfrew";
   src: url("assets/fonts/OnStage-webfont.woff") format("woff");
@@ -67,7 +75,7 @@ section {
   scroll-margin-top: 30px;
 }
 
-#testimonials {
+#testimonials, #demo {
   background: #110811;
   margin: 0;
   padding: 2rem 0;
@@ -131,6 +139,12 @@ section {
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
 @media (max-width: 991px) {
   .testimonial-card.d-none-mobile {
     display: none;
@@ -167,6 +181,61 @@ section {
 .testimonial-card footer {
   font-size: 0.9rem;
   font-style: italic;
+}
+
+/* Demo section styles */
+.audio-player-container {
+  background-color: #000;
+  border-radius: 8px;
+  padding-top: 0.5rem;
+  border: 1px solid #c004ff;
+}
+
+@media (max-width: 768px) {
+  .audio-player-container {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+
+.custom-audio-player {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  filter: sepia(0%) saturate(0%) brightness(200%) contrast(1000%) invert(0%)
+}
+
+.custom-audio-player::-webkit-media-controls-panel {
+  background-color: #000000;
+}
+
+.custom-audio-player::-webkit-media-controls-play-button,
+.custom-audio-player::-webkit-media-controls-volume-slider-container,
+.custom-audio-player::-webkit-media-controls-volume-slider,
+.custom-audio-player::-webkit-media-controls-timeline,
+.custom-audio-player::-webkit-media-controls-current-time-display,
+.custom-audio-player::-webkit-media-controls-time-remaining-display,
+.custom-audio-player::-webkit-media-controls-mute-button {
+  filter: invert(100%);
+}
+
+/* Download button styles */
+.btn-download {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-download:hover {
+  background-color: #0062fffd;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 992px) {
@@ -310,6 +379,11 @@ section {
   background-color: #190F1B;
 }
 
+.bg-purple {
+  background: rgb(40,0,66) !important;
+  background: linear-gradient(335deg, rgba(40,0,66,1) 0%, rgba(120,0,197,1) 94%, rgba(129,0,209,1) 100%) !important;
+}
+
 .bg-light {
   background-color: #3f323f4f !important
 }
@@ -344,6 +418,13 @@ section {
   object-position: center top !important;
 }
 
+@media (max-width: 768px) {
+  .formation-card{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
 /* Mobile adjustments for formation cards */
 @media (max-width: 768px) {
   .formation-card .card-img-top {
@@ -375,7 +456,13 @@ section {
 
 @media (max-width: 1000px) {
   .responsive-logo {
-    font-size: calc(1rem + 0.9vw);
+    font-size: calc(1rem + 2vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-logo {
+    font-size: calc(1rem + 4vw);
   }
 }
 
@@ -428,6 +515,13 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+@media (max-width: 768px) {
+  .song-table-container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
 #songTable {
   margin-bottom: 0;
   border-collapse: separate;
@@ -476,6 +570,8 @@ section {
   transition: all 0.3s ease;
 }
 
+
+
 .search-container input:focus {
   background-color: #3a3a3a;
   border-color: var(--bs-warning);
@@ -489,6 +585,13 @@ section {
 
 .pagination-container {
   margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 .pagination-container button {
@@ -548,6 +651,9 @@ footer.text-primary {
   border-top: none !important;
 }
 
+.text-warning {
+  color: #c004ff;
+}
 
 /* Link colors */
 a {
@@ -679,8 +785,8 @@ a:visited.btn {
   background-color: transparent !important;
 }
 
-#testimonials {
-  padding-bottom: 72px !important
+#demo {
+  padding-bottom: 72px !important;
 }
 
 .carousel-item > img {
@@ -699,10 +805,24 @@ a:visited.btn {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  #referenzen .tabs-container {
+   margin-left: 15px;
+   margin-right: 15px;
+  }
+}
+
 #referenzen .tabs {
   gap: 10px;
   padding-bottom: 10px;
   justify-content: center;
+}
+@media (max-width: 767px) {
+  #referenzen .tabs {
+    gap: 3px;
+    padding-bottom: 0px;
+    justify-content: center;
+  }
 }
 
 #referenzen .tab {
@@ -719,8 +839,8 @@ a:visited.btn {
 @media (max-width: 767px) {
   #referenzen .tab {
     flex: 0 0 calc(50% - 10px);
-    text-align: center;
-    margin-bottom: 5px;
+    text-align: center  ;
+    margin-bottom: 0 px;
   }
 }
 
