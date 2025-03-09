@@ -4,15 +4,26 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Testimonials rotation
 function rotateTestimonials() {
     const groups = document.querySelectorAll('.testimonial-group');
-    let activeGroup = document.querySelector('.testimonial-group.active');
-    let nextGroup = activeGroup.nextElementSibling || groups[0];
-
-    activeGroup.classList.remove('active');
-    nextGroup.classList.add('active');
+    // Only proceed if we have testimonial groups on this page
+    if (groups.length > 0) {
+        let activeGroup = document.querySelector('.testimonial-group.active');
+        // Check if there is an active group before proceeding
+        if (activeGroup) {
+            let nextGroup = activeGroup.nextElementSibling || groups[0];
+            activeGroup.classList.remove('active');
+            nextGroup.classList.add('active');
+        } else {
+            // If no active group is found, activate the first one
+            groups[0].classList.add('active');
+        }
+    }
 }
 
-// Initialize testimonials rotation
-setInterval(rotateTestimonials, 10000);
+// Initialize testimonials rotation only if testimonials exist on the page
+const testimonialGroups = document.querySelectorAll('.testimonial-group');
+if (testimonialGroups.length > 0) {
+    setInterval(rotateTestimonials, 10000);
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
