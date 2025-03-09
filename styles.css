@@ -344,6 +344,13 @@ section {
   object-position: center top !important;
 }
 
+/* Mobile adjustments for formation cards */
+@media (max-width: 768px) {
+  .formation-card .card-img-top {
+    height: 350px; /* Taller container on mobile */
+  }
+}
+
 .min-vh-70 {
   min-height: 70vh;
 }
@@ -598,6 +605,64 @@ a:visited.btn {
 #anlässe, #home {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+}
+
+/* Fix for carousel images in mobile view */
+.carousel-item img, .mobile-optimized {
+  object-fit: cover;
+  object-position: center top;
+  height: auto;
+  max-height: 500px;
+}
+
+/* Enhanced carousel captions for all screen sizes */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 15px;
+  border-radius: 4px;
+  max-width: 250px;
+  bottom: 45px;
+  left: 0px;
+  right: auto;
+}
+
+/* Custom focus points for specific images */
+.focus-left-top {
+  object-position: 30% 0% !important; /* 30% from left, 0% from top */
+}
+
+.focus-left2-top {
+  object-position: 35% 0% !important; /* 30% from left, 0% from top */
+}
+
+.focus-right-top {
+  object-position: 70% 0% !important; /* 70% from left, 0% from top */
+}
+
+.focus-center-top {
+  object-position: 50% 0% !important; /* Center horizontally, 0% from top */
+}
+
+@media (max-width: 768px) {
+  .carousel-item img, .mobile-optimized {
+    min-height: 300px; /* Ensure minimum height on mobile */
+    object-position: 50% 20%; /* Adjust vertical position to show more of the center-top portion */
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile-specific caption styling */
+  .carousel-caption {
+    padding: 8px 12px;
+    bottom: 40px;
+    left: 0px;
+    max-width: 200px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 16px;
+    margin: 0;
+  }
 }
 
 @media (max-width: 991px) {
