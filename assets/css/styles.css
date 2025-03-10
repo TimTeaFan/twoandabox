@@ -116,18 +116,7 @@ section {
   overflow: hidden;
 }
 
-.testimonial-group {
-  display: none;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-}
 
-.testimonial-group.active {
-  display: grid;
-  opacity: 1;
-}
 
 .testimonial-container {
   display: grid;
@@ -323,12 +312,7 @@ section {
   font-weight: 600;
 }
 
-#testimonials .carousel-item {
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 #formationCarousel .carousel-controls-wrapper {
   position: absolute;
@@ -405,12 +389,6 @@ section {
   color: #fff !important;
 }
 
-
-.text-alert {
-  font-weight:600;
-  color: var(--bs-alert) !important;
-}
-
 .font-renfrew {
   font-family: "Renfrew", sans-serif;
 }
@@ -441,9 +419,6 @@ section {
   }
 }
 
-.min-vh-70 {
-  min-height: 70vh;
-}
 
 .hover-warning {
   transition: color 0.4s ease 0.1s;
@@ -452,12 +427,7 @@ section {
   color: var(--bs-warning) !important;
 }
 
-.hover-primary {
-  transition: color 0.4s ease 0.1s;
-}
-.hover-primary:hover {
-  color: var(--bs-primary) !important;
-}
+
 
 .responsive-logo {
   font-size: 2rem;
@@ -479,9 +449,7 @@ section {
   font-size: 1.3rem;
 }
 
-.ratio-4x3 {
-  --bs-aspect-ratio: 75%;
-}
+
 
 .shadow-sm {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -648,7 +616,6 @@ section {
 /* Fix Scrolling Issue when clicking navbar items */ 
 section {
   scroll-margin-top: 50px;
-  scroll-snap-margin-top: 50px; /* For older browsers */
 }
 
 footer {
@@ -676,14 +643,6 @@ footer a {
   }
 }
 
-footer.text-primary {
-  border-top: none !important;
-}
-
-.text-warning {
-  color: #c004ff;
-}
-
 /* Link colors */
 a {
   color: #fbff00;
@@ -697,6 +656,10 @@ a:visited {
 
 a:hover {
   color: #c004ff;
+}
+
+#demo > div > div > div > p > a:hover  {
+  color: #0062fffd;
 }
 
 /* Add transition to all links */
